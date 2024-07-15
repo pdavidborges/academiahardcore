@@ -1,0 +1,518 @@
+:root{
+    --brand: #B91F33;
+    --brand-dark: #a0182a;
+    --primary: #101417;
+    --contrast: #E0E34C;
+    --gray-light: #E1E1E1;
+    --gray-medium: #666666;
+    --white: #ffffff;
+    --black: #000000;
+    --rounded: 3px;
+    --swiper-navigation-color: var(--brand);
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover{
+    color: var(--contrast);
+}
+
+
+
+@keyframes rotate {
+    
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);         
+    }
+
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+#academia{
+    scroll-margin-top: 200px;
+}
+
+#planos, #contato{
+    scroll-margin-top: 150px;
+}
+
+
+*{
+    font-family: "Teko", sans-serif;
+    text-transform: uppercase; /*aplica maiúsculo no texto*/
+}
+
+html{
+    scroll-behavior: smooth; /*faz com que a navegação em âncora seja suave*/
+}
+
+body{    
+    background-color: var(--primary);
+    color: var(--white);
+    margin: 0;    
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    line-height: 100%;
+}
+
+h2{
+    font-size: 40px;
+}
+
+p{
+    font-size: 18px;
+    color: var(--gray-light);
+    line-height: 120%;
+    /*
+    text-indent: 50px;
+    text-align: justify;
+    */
+}
+
+img{
+    display: block;
+}
+
+/*utilitários*/
+.btn{
+    display: inline-block;
+    background-color: var(--brand);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 47px 5px 47px;
+    border-radius: var(--rounded);
+    /*transition: 0.3s;*/
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(0.97);
+    /*background-color: var(--brand-dark)*/
+}
+
+.btn-outline{
+    border-color: var(--brand);
+    background-color: transparent;
+}
+
+.container{
+    width: calc(100% - 30px);
+    max-width: 1140px; /*largura máxima do container*/
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    background-color: var(--black);
+    padding: 16px 0; /*vertical(top/bottom) horizontal (left/right)*/
+    
+    /*Deixa a div "fixa" após a rolagem do usuário*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    column-gap: 111px;
+}
+
+.menu a{
+    /*margin-left: 111px;*/
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700; /*add negrito*/
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu a:hover{
+    color: var(--brand);
+}
+
+.menu a:active{
+    color: var(--contrast);
+}
+
+/*****************************************Swiper**********************************/
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+/*****************************************Swiper**********************************/
+
+.bg-1{
+    background-image: url(../img/background.jpg);
+}
+
+.bg-2{
+    background-image: url(../img/background-2.jpg);
+}
+
+.bg-3{
+    background-image: url(../img/background-3.jpg);
+}
+
+.hero-section{
+    animation: fadeIn 2s;
+    /*
+        VH -> View Height
+        1vh = Altura do navegador / 100
+    */
+    height: calc(100vh - 100px);    
+    /*background-repeat: no-repeat;*/
+    background-size: cover; /*imagem cobrindo toda a div*/
+    background-position: top center;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.hero-section h1, .hero-section h2{
+    font-size: 96px;
+    line-height: 90%;
+    color: var(--gray-light);
+}
+
+.hero-section p{
+    font-size: 24px;    
+}
+
+.academia{
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.faca-parte{
+    background-color: var(--gray-light);
+}
+
+.faca-parte h2{
+    color: var(--primary);
+}
+
+.faca-parte p{
+    color: var(--gray-medium);
+    margin-bottom: 0;
+}
+
+
+.faca-parte .content{
+    width: calc(100% - 200px);
+    max-width: 850px;
+    padding: 35px 0;
+}
+
+.faca-parte .container{
+    /*Faz com que o container seja referência para o position absolute da imagem*/
+    position: relative;  
+    
+}
+
+.faca-parte .image{
+    /*Posição em relação ao elemento pai (desde que ele tenha position), 
+    caso contrário será em relação ao body*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+.planos{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.flex-cards{
+    display: flex;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.card{
+    border: solid 1px var(--gray-light);
+    padding: 30px;
+    border-radius: var(--rounded);
+}
+
+.card h3{
+    font-size: 32px;
+}
+
+.card ul{
+    text-align: left;
+    padding: 0;
+    list-style-position: inside;
+    font-size: 18px;
+    color: var(--gray-light);
+}
+
+.card .btn{
+    display: block;
+}
+
+.card .price{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card-destaque{
+    border-color: var(--contrast);
+    position: relative;
+}
+
+.card-destaque .price{
+    color: var(--contrast);
+}
+
+
+
+
+
+/*https://flexboxfroggy.com/*/
+.selo{
+    animation: rotate 5s infinite linear; 
+    width: 70px;
+    height: 70px;
+    background-color: var(--contrast);
+    color: var(--black);
+    line-height: 90%;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+
+    position: absolute;
+    top: -25px;
+    right: -7px;
+}
+
+.contato{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 100px;
+}
+
+.contato form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start;
+}
+
+.contato input, .contato textarea{
+    background-color: transparent;
+    border: solid 1px var(--gray-light);
+    border-radius: var(--rounded);
+    height: 40px;
+    padding-left: 10px;
+    color: var(--white);
+    font-size: 18px;
+    /*Faz com que borda e padding não interfiram nas dimensões*/
+    box-sizing: border-box; 
+    width: 100%;
+    /*width: calc(100% - 12px);*/
+}
+
+.contato textarea{
+    height: 130px;
+    padding-top: 10px;
+}
+
+.contato ::placeholder{
+    color: #707070;
+}
+
+.footer{
+    background-color: var(--brand);
+    padding: 15px 194px 11px 194px;
+    text-align: center;
+}
+
+.footer p{
+    margin: 0;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.social a:hover{
+    transform: scale(1.1);    
+}
+
+
+/*Media queries -> Condicionais para alteração da formatação*/
+/*Condição para telas de no máximo 1100px*/
+@media (max-width: 1100px){
+
+    h2{
+        font-size: 32px;
+    }
+
+    .menu{
+        /*display: none;*/
+        transform: translateX(-100%);
+        background-color: var(--brand-dark);
+        position: absolute;
+        left: 0;
+        top: 100px;
+        height: calc(100vh - 100px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: 0.5s;
+    }
+
+    /*Classe que será interpretada quando o usuário clicar no botão*/
+    .menu-open{
+        transform: translateX(0);        
+    }
+
+    .menu a{
+        padding: 20px 10px;
+        border-bottom: 1px solid var(--primary);
+        /*margin: 0;*/
+    }
+
+    .menu a:hover{
+        background-color: var(--primary);
+        color: var(--white);
+    }
+    
+    .menu a:active{
+        color: var(--contrast);
+    }
+    
+    .bar{
+        width: 40px;
+        height: 3px;
+        background-color: var(--white);
+        margin-bottom: 3px;
+        transition: 0.3s;
+    }
+
+    /*Quando a classe x existir no HTML (JS que add a class) as barras serão formatadas*/
+    
+    /*Quando o .bar for o primeiro filho*/
+    .x .bar:first-child{
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    /*bar que for o filho de número 2*/
+    .x .bar:nth-child(2){
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+     /*Quando o .bar for o último filho*/
+    .x .bar:last-child{
+        transform: rotate(-45deg) translate(4px, -3px);
+    }
+
+    .hero-section{
+        height: 420px;
+    }
+
+    .hero-section h1, .hero-section h2{
+        font-size: 36px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .academia{
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+
+    .flex-cards{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        max-width: 450px;
+    }
+
+    .contato{
+        flex-direction: column;
+    }
+
+    .contato iframe{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 767px){
+
+    .swiper-button-next, .swiper-button-prev{
+        display: none;
+    }
+
+    .selo{
+        top: 2px;
+        right: 0;
+    }
+
+    .academia img{
+        width: 100%;        
+    }
+
+    .faca-parte .image{
+        display: none;
+    }
+
+    .faca-parte .content{
+        width: 100%;
+    }
+    
+    .footer{
+        padding: 15px 15px 11px 15px;
+    }
+    
+}
